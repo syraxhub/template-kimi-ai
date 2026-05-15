@@ -4,14 +4,15 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import { HugeiconsIcon } from "@hugeicons/react"
 import {
-  LayoutDashboard,
-  ListTodo,
-  FolderKanban,
-  Users,
-  Menu,
-  Settings,
-} from "lucide-react"
+  DashboardSquare01Icon,
+  Task01Icon,
+  Folder01Icon,
+  UserMultipleIcon,
+  Settings01Icon,
+  Menu01Icon,
+} from "@hugeicons/core-free-icons"
 import {
   Sheet,
   SheetContent,
@@ -23,17 +24,17 @@ import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
 const navItems = [
-  { href: "/", label: "Home", icon: LayoutDashboard },
-  { href: "/tasks", label: "Tasks", icon: ListTodo },
-  { href: "/projects", label: "Projects", icon: FolderKanban },
-  { href: "/users", label: "Users", icon: Users },
+  { href: "/", label: "Home", icon: DashboardSquare01Icon },
+  { href: "/tasks", label: "Tasks", icon: Task01Icon },
+  { href: "/projects", label: "Projects", icon: Folder01Icon },
+  { href: "/users", label: "Users", icon: UserMultipleIcon },
 ]
 
 const menuItems = [
-  { href: "/settings", label: "Settings", icon: Settings },
-  { href: "/tasks", label: "Tasks", icon: ListTodo },
-  { href: "/projects", label: "Projects", icon: FolderKanban },
-  { href: "/users", label: "Users", icon: Users },
+  { href: "/settings", label: "Settings", icon: Settings01Icon },
+  { href: "/tasks", label: "Tasks", icon: Task01Icon },
+  { href: "/projects", label: "Projects", icon: Folder01Icon },
+  { href: "/users", label: "Users", icon: UserMultipleIcon },
 ]
 
 export function MobileNav() {
@@ -44,7 +45,6 @@ export function MobileNav() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t lg:hidden">
       <div className="grid grid-cols-5 h-16">
         {navItems.map((item) => {
-          const Icon = item.icon
           const isActive = pathname === item.href
           return (
             <Link
@@ -57,7 +57,11 @@ export function MobileNav() {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Icon className="h-5 w-5" />
+              <HugeiconsIcon
+                icon={item.icon}
+                size={20}
+                strokeWidth={1.5}
+              />
               <span className="text-[10px]">{item.label}</span>
             </Link>
           )
@@ -74,7 +78,11 @@ export function MobileNav() {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              <Menu className="h-5 w-5" />
+              <HugeiconsIcon
+                icon={Menu01Icon}
+                size={20}
+                strokeWidth={1.5}
+              />
               <span className="text-[10px]">Menu</span>
             </button>
           </SheetTrigger>
@@ -83,27 +91,28 @@ export function MobileNav() {
               <SheetTitle>Menu</SheetTitle>
             </SheetHeader>
             <div className="grid gap-2 py-4">
-              {menuItems.map((item) => {
-                const Icon = item.icon
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
+              {menuItems.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                >
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start gap-3"
                   >
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-start gap-3"
-                    >
-                      <Icon className="h-5 w-5" />
-                      {item.label}
-                    </Button>
-                  </Link>
-                )
-              })}
+                    <HugeiconsIcon
+                      icon={item.icon}
+                      size={20}
+                      strokeWidth={1.5}
+                    />
+                    {item.label}
+                  </Button>
+                </Link>
+              ))}
               <Separator className="my-2" />
               <div className="px-4 py-2">
-                <p className="text-sm text-muted-foreground">Kimi UI v1.0</p>
+                <p className="text-sm text-muted-foreground">Kimi UI v2.0</p>
               </div>
             </div>
           </SheetContent>

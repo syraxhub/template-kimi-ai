@@ -21,9 +21,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${figtree.variable} font-sans antialiased pb-16 lg:pb-0`}>
+      <body className={`${figtree.variable} font-sans antialiased`}>
         <TooltipProvider>
-          {children}
+          <div className="min-h-screen pb-16 lg:pb-0">
+            {children}
+          </div>
           <MobileNav />
         </TooltipProvider>
       </body>
