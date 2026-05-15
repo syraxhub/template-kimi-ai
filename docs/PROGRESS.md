@@ -8,12 +8,31 @@
 - [x] Folder structure
 - [x] CLAUDE.md, SPEC.md, SCHEMA.md, DECISIONS.md
 
+## Completed ✅
+- [x] Project scaffold (Next.js + TypeScript + Tailwind)
+- [x] shadcn/ui initialized
+- [x] Prisma initialized
+- [x] Core components installed (button, card, table, input, dialog, etc)
+- [x] Folder structure
+- [x] CLAUDE.md, SPEC.md, SCHEMA.md, DECISIONS.md
+- [x] Layout component (sidebar + header + main)
+- [x] Dashboard page with stats
+- [x] Tasks page with data table
+- [x] Projects page with data table
+- [x] Users page with data table
+- [x] Settings page with tabs
+- [x] Mock data (User, Project, Task)
+- [x] Status badge component
+- [x] Build passes
+- [x] First commit
+
 ## In Progress ⏳
-- [ ] Layout component (sidebar + header + main)
-- [ ] Dashboard page
-- [ ] Table component with demo data
-- [ ] Form component with validation
-- [ ] List view component
+- [ ] User review & feedback
+
+## Next ⬜
+- [ ] Polish & responsive fixes (if needed)
+- [ ] User approval: "Frontend done"
+- [ ] Backend phase (after approval)
 
 ## Next ⬜
 - [ ] Mock data (User, Project, Task)
