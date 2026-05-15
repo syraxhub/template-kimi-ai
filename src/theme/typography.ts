@@ -1,6 +1,8 @@
 /**
  * Typography Tokens - Shared between Web and React Native
  * Font: Figtree (Google Fonts)
+ * 
+ * Matches shadcn/ui defaults with rem-based sizes
  */
 
 // ============================================
@@ -12,20 +14,20 @@ export const fontFamily = {
 } as const
 
 // ============================================
-// FONT SIZES (in pixels)
+// FONT SIZES (in pixels, matching Tailwind defaults)
 // ============================================
 export const fontSize = {
-  xs: 12,
-  sm: 14,
-  base: 16,
-  lg: 18,
-  xl: 20,
-  '2xl': 24,
-  '3xl': 30,
-  '4xl': 36,
-  '5xl': 48,
-  '6xl': 60,
-  '7xl': 72,
+  xs: 12,      // 0.75rem
+  sm: 14,      // 0.875rem
+  base: 16,    // 1rem
+  lg: 18,      // 1.125rem
+  xl: 20,      // 1.25rem
+  '2xl': 24,   // 1.5rem
+  '3xl': 30,   // 1.875rem
+  '4xl': 36,   // 2.25rem
+  '5xl': 48,   // 3rem
+  '6xl': 60,   // 3.75rem
+  '7xl': 72,   // 4.5rem
 } as const
 
 // ============================================

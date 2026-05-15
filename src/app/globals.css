@@ -1,3 +1,11 @@
+/**
+ * Global CSS - Generated from design tokens
+ * Source: src/theme/tokens.ts, src/theme/components.ts
+ * Preset: bbVKFP6 (radix-maia, neutral base)
+ * 
+ * Jika update token, regenerate CSS variables dari token.
+ */
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";

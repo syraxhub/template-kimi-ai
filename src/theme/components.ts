@@ -1,6 +1,8 @@
 /**
  * Component Specs - Shared design specs between Web and React Native
  * 
+ * Generated from shadcn/ui preset: bbVKFP6 (radix-maia, neutral base)
+ * 
  * Ini adalah "blueprint" untuk komponen UI.
  * Web: Implementasi pakai shadcn/ui + Tailwind
  * Native: Implementasi pakai React Native Paper / custom
@@ -40,38 +42,38 @@ export const button = {
     },
   },
   
-  // Variants
+  // Variants (match shadcn/ui neutral theme)
   variants: {
     default: {
-      background: colors.neutral[900],
-      foreground: colors.neutral[50],
+      background: colors.primary.DEFAULT,      // neutral-900
+      foreground: colors.primary.foreground,   // neutral-50
       hover: colors.neutral[800],
     },
     destructive: {
-      background: colors.error.DEFAULT,
-      foreground: colors.white,
-      hover: colors.error.dark,
+      background: colors.destructive.DEFAULT,  // red-600
+      foreground: colors.destructive.foreground,
+      hover: colors.destructive.hover,
     },
     outline: {
       background: 'transparent',
-      foreground: colors.neutral[900],
-      border: colors.neutral[200],
-      hover: colors.neutral[100],
+      foreground: colors.foreground,
+      border: colors.border,
+      hover: colors.secondary.DEFAULT,
     },
     secondary: {
-      background: colors.neutral[100],
-      foreground: colors.neutral[900],
-      hover: colors.neutral[200],
+      background: colors.secondary.DEFAULT,    // neutral-100
+      foreground: colors.secondary.foreground, // neutral-900
+      hover: colors.secondary.hover,
     },
     ghost: {
       background: 'transparent',
-      foreground: colors.neutral[900],
-      hover: colors.neutral[100],
+      foreground: colors.foreground,
+      hover: colors.secondary.DEFAULT,
     },
     link: {
       background: 'transparent',
-      foreground: colors.primary[600],
-      hover: colors.primary[700],
+      foreground: colors.neutral[600],
+      hover: colors.neutral[900],
       underline: true,
     },
   },
@@ -81,25 +83,25 @@ export const button = {
 // CARD
 // ============================================
 export const card = {
-  borderRadius: radius.xl,
+  borderRadius: radius.lg,      // 10px (0.625rem)
   padding: spacing[6],
-  background: colors.white,
-  border: colors.neutral[200],
+  background: colors.card.DEFAULT,
+  border: colors.border,
   shadow: shadows.DEFAULT,
   
   // Variants
   variants: {
     default: {
-      background: colors.white,
-      border: colors.neutral[200],
+      background: colors.card.DEFAULT,
+      border: colors.border,
     },
     muted: {
-      background: colors.neutral[50],
-      border: colors.neutral[200],
+      background: colors.muted.DEFAULT,
+      border: colors.border,
     },
     primary: {
-      background: colors.primary[50],
-      border: colors.primary[200],
+      background: colors.secondary.DEFAULT,
+      border: colors.border,
     },
   },
 } as const
@@ -116,21 +118,21 @@ export const input = {
   // States
   states: {
     default: {
-      border: colors.neutral[200],
-      background: colors.white,
+      border: colors.border,
+      background: colors.background,
     },
     focus: {
-      border: colors.primary[500],
-      ring: colors.primary[200],
+      border: colors.ring,
+      ring: colors.ring,
     },
     error: {
-      border: colors.error.DEFAULT,
-      ring: colors.error.light,
+      border: colors.destructive.DEFAULT,
+      ring: colors.destructive.DEFAULT + '33', // 20% opacity
     },
     disabled: {
-      border: colors.neutral[200],
-      background: colors.neutral[100],
-      foreground: colors.neutral[400],
+      border: colors.border,
+      background: colors.muted.DEFAULT,
+      foreground: colors.muted.foreground,
     },
   },
   
@@ -155,29 +157,39 @@ export const badge = {
   // Variants
   variants: {
     default: {
-      background: colors.neutral[100],
-      foreground: colors.neutral[900],
-      border: colors.neutral[200],
+      background: colors.secondary.DEFAULT,
+      foreground: colors.secondary.foreground,
+      border: colors.border,
     },
     primary: {
-      background: colors.primary[100],
-      foreground: colors.primary[800],
-      border: colors.primary[200],
+      background: colors.primary.DEFAULT,
+      foreground: colors.primary.foreground,
+      border: colors.primary.DEFAULT,
+    },
+    secondary: {
+      background: colors.secondary.DEFAULT,
+      foreground: colors.secondary.foreground,
+      border: colors.border,
     },
     success: {
-      background: colors.success.light,
-      foreground: colors.success.dark,
-      border: colors.success.DEFAULT,
+      background: colors.status.active + '22', // 13% opacity
+      foreground: colors.status.active,
+      border: colors.status.active + '33',
     },
     warning: {
-      background: colors.warning.light,
-      foreground: colors.warning.dark,
-      border: colors.warning.DEFAULT,
+      background: colors.status.pending + '22',
+      foreground: colors.status.pending,
+      border: colors.status.pending + '33',
     },
     error: {
-      background: colors.error.light,
-      foreground: colors.error.dark,
-      border: colors.error.DEFAULT,
+      background: colors.status.cancelled + '22',
+      foreground: colors.status.cancelled,
+      border: colors.status.cancelled + '33',
+    },
+    outline: {
+      background: 'transparent',
+      foreground: colors.foreground,
+      border: colors.border,
     },
   },
 } as const
@@ -186,27 +198,27 @@ export const badge = {
 // TABLE
 // ============================================
 export const table = {
-  borderRadius: radius.md,
+  borderRadius: radius.lg,
   borderWidth: 1,
-  borderColor: colors.neutral[200],
+  borderColor: colors.border,
   
   header: {
-    background: colors.neutral[50],
+    background: colors.muted.DEFAULT,
     fontWeight: fontWeight.medium,
     fontSize: fontSize.sm,
-    color: colors.neutral[500],
+    color: colors.muted.foreground,
     padding: spacing[3],
   },
   
   cell: {
     fontSize: fontSize.sm,
-    color: colors.neutral[900],
+    color: colors.foreground,
     padding: spacing[3],
   },
   
   row: {
-    borderBottom: colors.neutral[100],
-    hover: colors.neutral[50],
+    borderBottom: colors.border,
+    hover: colors.muted.DEFAULT,
   },
 } as const
 
@@ -215,11 +227,11 @@ export const table = {
 // ============================================
 export const sidebar = {
   width: {
-    expanded: 256,  // 16rem
+    expanded: 304,  // 19rem (matching --sidebar-width)
     collapsed: 64,  // 4rem
   },
-  background: colors.white,
-  border: colors.neutral[200],
+  background: colors.sidebar.DEFAULT,
+  border: colors.sidebar.border,
   
   item: {
     height: 40,
@@ -229,15 +241,15 @@ export const sidebar = {
     
     states: {
       default: {
-        foreground: colors.neutral[600],
+        foreground: colors.muted.foreground,
       },
       active: {
-        background: colors.neutral[100],
-        foreground: colors.neutral[900],
+        background: colors.sidebar.accent.DEFAULT,
+        foreground: colors.sidebar.accent.foreground,
       },
       hover: {
-        background: colors.neutral[50],
-        foreground: colors.neutral[900],
+        background: colors.sidebar.accent.DEFAULT,
+        foreground: colors.sidebar.foreground,
       },
     },
   },
@@ -248,8 +260,8 @@ export const sidebar = {
 // ============================================
 export const bottomNav = {
   height: 64,
-  background: colors.white,
-  borderTop: colors.neutral[200],
+  background: colors.background,
+  borderTop: colors.border,
   
   item: {
     iconSize: 20,
@@ -257,10 +269,10 @@ export const bottomNav = {
     
     states: {
       default: {
-        foreground: colors.neutral[400],
+        foreground: colors.muted.foreground,
       },
       active: {
-        foreground: colors.primary[600],
+        foreground: colors.primary.DEFAULT,
       },
     },
   },
@@ -275,7 +287,7 @@ export const modal = {
     bottom: radius['2xl'],
   },
   padding: spacing[6],
-  background: colors.white,
+  background: colors.background,
   shadow: shadows.lg,
   overlay: 'rgba(0, 0, 0, 0.5)',
 } as const
@@ -290,24 +302,99 @@ export const toast = {
   
   variants: {
     success: {
-      background: colors.success.light,
-      border: colors.success.DEFAULT,
-      foreground: colors.success.dark,
+      background: colors.status.active + '15',
+      border: colors.status.active,
+      foreground: colors.status.active,
     },
     error: {
-      background: colors.error.light,
-      border: colors.error.DEFAULT,
-      foreground: colors.error.dark,
+      background: colors.status.cancelled + '15',
+      border: colors.status.cancelled,
+      foreground: colors.status.cancelled,
     },
     warning: {
-      background: colors.warning.light,
-      border: colors.warning.DEFAULT,
-      foreground: colors.warning.dark,
+      background: colors.status.pending + '15',
+      border: colors.status.pending,
+      foreground: colors.status.pending,
     },
     info: {
-      background: colors.info.light,
-      border: colors.info.DEFAULT,
-      foreground: colors.info.dark,
+      background: colors.neutral[200] + '50',
+      border: colors.neutral[400],
+      foreground: colors.neutral[700],
     },
   },
+} as const
+
+// ============================================
+// DIALOG
+// ============================================
+export const dialog = {
+  borderRadius: radius.lg,
+  padding: spacing[6],
+  background: colors.background,
+  shadow: shadows.lg,
+  overlay: 'rgba(0, 0, 0, 0.5)',
+  
+  header: {
+    paddingBottom: spacing[4],
+    borderBottom: colors.border,
+  },
+  
+  footer: {
+    paddingTop: spacing[4],
+    borderTop: colors.border,
+    gap: spacing[3],
+  },
+} as const
+
+// ============================================
+// TABS
+// ============================================
+export const tabs = {
+  trigger: {
+    height: 40,
+    paddingHorizontal: spacing[4],
+    borderRadius: radius.md,
+    fontSize: fontSize.sm,
+    fontWeight: fontWeight.medium,
+    
+    states: {
+      default: {
+        foreground: colors.muted.foreground,
+      },
+      active: {
+        background: colors.background,
+        foreground: colors.foreground,
+        shadow: shadows.sm,
+      },
+      hover: {
+        foreground: colors.foreground,
+      },
+    },
+  },
+  
+  list: {
+    background: colors.muted.DEFAULT,
+    borderRadius: radius.md,
+    padding: spacing[1],
+  },
+} as const
+
+// ============================================
+// TOOLTIP
+// ============================================
+export const tooltip = {
+  borderRadius: radius.md,
+  padding: spacing[2.5],
+  background: colors.primary.DEFAULT,
+  foreground: colors.primary.foreground,
+  fontSize: fontSize.sm,
+  shadow: shadows.md,
+} as const
+
+// ============================================
+// SEPARATOR
+// ============================================
+export const separator = {
+  color: colors.border,
+  thickness: 1,
 } as const

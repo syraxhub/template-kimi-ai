@@ -1,86 +1,118 @@
 /**
  * Design Tokens - Shared between Web (shadcn/ui) and React Native
  * 
+ * Generated from shadcn/ui preset: bbVKFP6 (radix-maia, neutral base)
+ * 
  * Usage:
  * Web:    import { colors } from '@/theme/tokens'
  * Native: import { colors } from './theme/tokens'
  */
 
 // ============================================
-// COLORS
+// COLORS (from CSS variables, converted to hex)
 // ============================================
 export const colors = {
   // Base
   white: '#FFFFFF',
   black: '#000000',
   
-  // Brand
-  primary: {
-    50: '#f0f9ff',
-    100: '#e0f2fe',
-    200: '#bae6fd',
-    300: '#7dd3fc',
-    400: '#38bdf8',
-    500: '#0ea5e9',
-    600: '#0284c7',
-    700: '#0369a1',
-    800: '#075985',
-    900: '#0c4a6e',
-    950: '#082f49',
-  },
-  
-  // Neutral (slate)
+  // Neutral palette (matching oklch neutral scale)
   neutral: {
-    50: '#f8fafc',
-    100: '#f1f5f9',
-    200: '#e2e8f0',
-    300: '#cbd5e1',
-    400: '#94a3b8',
-    500: '#64748b',
-    600: '#475569',
-    700: '#334155',
-    800: '#1e293b',
-    900: '#0f172a',
-    950: '#020617',
+    50: '#fafafa',    // --sidebar
+    100: '#f5f5f5',   // --secondary, --muted, --accent
+    200: '#e5e5e5',   // --border, --input
+    300: '#d4d4d4',
+    400: '#a3a3a3',   // --ring
+    500: '#737373',   // --muted-foreground
+    600: '#525252',
+    700: '#404040',
+    800: '#262626',
+    900: '#171717',   // --primary, --foreground
+    950: '#0a0a0a',
   },
   
-  // Semantic
-  success: {
-    light: '#dcfce7',
-    DEFAULT: '#22c55e',
-    dark: '#15803d',
+  // Semantic (mapped from CSS variables)
+  primary: {
+    DEFAULT: '#171717',    // --primary (neutral-900)
+    foreground: '#fafafa', // --primary-foreground
+    hover: '#262626',      // neutral-800
   },
-  warning: {
-    light: '#fef9c3',
-    DEFAULT: '#eab308',
-    dark: '#a16207',
+  secondary: {
+    DEFAULT: '#f5f5f5',    // --secondary
+    foreground: '#171717', // --secondary-foreground
+    hover: '#e5e5e5',      // neutral-200
   },
-  error: {
-    light: '#fee2e2',
-    DEFAULT: '#ef4444',
-    dark: '#b91c1c',
+  muted: {
+    DEFAULT: '#f5f5f5',    // --muted
+    foreground: '#737373', // --muted-foreground
   },
-  info: {
-    light: '#dbeafe',
-    DEFAULT: '#3b82f6',
-    dark: '#1d4ed8',
+  accent: {
+    DEFAULT: '#f5f5f5',    // --accent
+    foreground: '#171717', // --accent-foreground
   },
+  destructive: {
+    DEFAULT: '#dc2626',    // --destructive
+    foreground: '#fafafa',
+    hover: '#b91c1c',
+  },
+  
+  // Background / Foreground
+  background: '#FFFFFF',     // --background
+  foreground: '#171717',     // --foreground
+  card: {
+    DEFAULT: '#FFFFFF',      // --card
+    foreground: '#171717',   // --card-foreground
+  },
+  popover: {
+    DEFAULT: '#FFFFFF',      // --popover
+    foreground: '#171717',   // --popover-foreground
+  },
+  
+  // Sidebar specific
+  sidebar: {
+    DEFAULT: '#fafafa',      // --sidebar
+    foreground: '#171717',   // --sidebar-foreground
+    primary: {
+      DEFAULT: '#171717',    // --sidebar-primary
+      foreground: '#fafafa', // --sidebar-primary-foreground
+    },
+    accent: {
+      DEFAULT: '#f5f5f5',    // --sidebar-accent
+      foreground: '#171717', // --sidebar-accent-foreground
+    },
+    border: '#e5e5e5',       // --sidebar-border
+    ring: '#a3a3a3',         // --sidebar-ring
+  },
+  
+  // Border / Input / Ring
+  border: '#e5e5e5',         // --border
+  input: '#e5e5e5',          // --input
+  ring: '#a3a3a3',           // --ring
   
   // Status (for badges, etc)
   status: {
     active: '#22c55e',
     pending: '#eab308',
-    archived: '#94a3b8',
+    archived: '#a3a3a3',
     draft: '#f59e0b',
     done: '#22c55e',
-    cancelled: '#ef4444',
-    todo: '#94a3b8',
+    cancelled: '#dc2626',
+    todo: '#a3a3a3',
     inProgress: '#3b82f6',
+  },
+  
+  // Chart colors (from CSS variables)
+  chart: {
+    1: '#e5e5e5',
+    2: '#737373',
+    3: '#525252',
+    4: '#404040',
+    5: '#262626',
   },
 } as const
 
 // ============================================
-// SPACING
+// SPACING (Tailwind scale in pixels)
 // ============================================
 export const spacing = {
   0: 0,
@@ -120,17 +152,18 @@ export const spacing = {
 } as const
 
 // ============================================
-// BORDER RADIUS
+// BORDER RADIUS (from --radius: 0.625rem)
 // ============================================
 export const radius = {
   none: 0,
-  sm: 2,
-  DEFAULT: 4,
-  md: 6,
-  lg: 8,
-  xl: 12,
-  '2xl': 16,
-  '3xl': 24,
+  sm: 6,      // calc(0.625rem * 0.6) ≈ 6px
+  DEFAULT: 8, // calc(0.625rem * 0.8) ≈ 8px
+  md: 8,      // alias for DEFAULT
+  lg: 10,     // 0.625rem = 10px
+  xl: 14,     // calc(0.625rem * 1.4) ≈ 14px
+  '2xl': 18,  // calc(0.625rem * 1.8) ≈ 18px
+  '3xl': 22,  // calc(0.625rem * 2.2) ≈ 22px
+  '4xl': 26,  // calc(0.625rem * 2.6) ≈ 26px
   full: 9999,
 } as const
 
