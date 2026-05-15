@@ -23,13 +23,15 @@ import {
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 
+// Main nav items (synced with sidebar)
 const navItems = [
-  { href: "/", label: "Home", icon: DashboardSquare01Icon },
+  { href: "/", label: "Dashboard", icon: DashboardSquare01Icon },
   { href: "/tasks", label: "Tasks", icon: Task01Icon },
   { href: "/projects", label: "Projects", icon: Folder01Icon },
   { href: "/users", label: "Users", icon: UserMultipleIcon },
 ]
 
+// Menu items for sheet (synced with sidebar)
 const menuItems = [
   { href: "/settings", label: "Settings", icon: Settings01Icon },
   { href: "/tasks", label: "Tasks", icon: Task01Icon },
@@ -45,7 +47,7 @@ export function MobileNav() {
     <nav className="fixed bottom-0 left-0 right-0 z-50 bg-background border-t lg:hidden">
       <div className="grid grid-cols-5 h-16">
         {navItems.map((item) => {
-          const isActive = pathname === item.href
+          const isActive = pathname === item.href || pathname.startsWith(item.href + "/")
           return (
             <Link
               key={item.href}
