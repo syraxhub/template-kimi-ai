@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate-css": "npx tsx scripts/generate-css.ts",
+    "theme:sync": "npm run generate-css && echo '✅ Theme synced. Run npm run build to verify.'"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

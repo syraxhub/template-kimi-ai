@@ -33,8 +33,26 @@
 ## Commands
 - `npm run dev` — start dev server
 - `npm run build` — typecheck & bundle
+- `npm run generate-css` — regenerate globals.css from tokens
+- `npm run theme:sync` — generate-css + confirmation
 - `npx prisma migrate dev` — apply DB migrations
 - `npx prisma generate` — regenerate Prisma client
+
+## Theme System (Token-Based)
+
+**Source of truth: `src/theme/`**
+- `tokens.ts` — colors, spacing, radius, shadows
+- `typography.ts` — font family, sizes, weights
+- `components.ts` — button, card, input, badge, etc specs
+
+**To change styles:**
+1. Edit files in `src/theme/`
+2. Run `npm run generate-css`
+3. Run `npm run build` to verify
+
+**NEVER edit `src/app/globals.css` manually** — it's auto-generated.
+
+**Token values are shared with React Native** — keep JS-friendly (hex colors, pixel values).
 
 ## Development Phases
 
